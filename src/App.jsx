@@ -4,6 +4,7 @@ import { Route, Routes , Router} from 'react-router-dom';
 import Home from './Page/Home';
 import LandList from './Page/LandList';
 import Layout from './Layout';
+import Admin from './Page/Admin';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route path='home' element={<Home />} />
         <Route path="landlist" element={<LandList />} />
+        <Route path='admin' element={<Admin/>}/>
       </Route>
     </Routes>
   );

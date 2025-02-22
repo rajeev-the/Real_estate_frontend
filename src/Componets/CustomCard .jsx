@@ -3,7 +3,12 @@ import { Card, Typography } from "antd"; // Import Ant Design Components
 
 const { Title, Text } = Typography;
 
-const CustomCard = () => {
+const CustomCard = ({
+  property_name,
+  acre,
+  acre_price
+
+  }) => {
   return (
     <Card
       hoverable
@@ -54,12 +59,12 @@ const CustomCard = () => {
           letterSpacing: "0.5px",
         }}
       >
-        📍 GURUGRAM, HARYANA
+        {  property_name  ?  property_name  :" Gurugram ,Gurugram, Haryana"}
       </Text>
 
       {/* Title */}
       <Title level={4} style={{ margin: "8px 0", fontWeight: "bold" }}>
-        7.3 Acre
+       {acre ? acre : 5} Acre
       </Title>
 
       {/* Price Info */}
@@ -70,7 +75,7 @@ const CustomCard = () => {
           fontWeight: "500",
         }}
       >
-        💰 35 Cr/ Acre (Approx.)
+        💰 {acre_price ?  acre_price : 222} Cr/ Acre (Approx.)
       </Text>
     </Card>
   );
