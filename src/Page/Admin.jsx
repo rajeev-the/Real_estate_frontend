@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Input } from "antd";
-import { useNavigate } from "react-router-dom";
+
 import "@ant-design/v5-patch-for-react-19";
 import { GoogleSpreadsheet }  from 'google-spreadsheet';
 
@@ -16,7 +16,7 @@ const Admin = () => {
   const [Road, setRoad] = useState("");
   const [property, setProperty] = useState("");
 
-  const navigate = useNavigate();
+ 
 
   useEffect(() => {
     const getState = async () => {
@@ -45,7 +45,7 @@ const Admin = () => {
       });
 
       setEstate(""); // Clear input field
-      navigate(0); // Refresh page
+      window.location.reload();
     } catch (error) {
       console.error("Error:", error.response ? error.response.data : error);
     }
@@ -115,7 +115,7 @@ const Admin = () => {
       setProperty("");
       setSelectedState("");
 
-      navigate(0); // Refresh page
+      window.location.reload(); // Refresh page
     } catch (error) {
       console.error("Error creating property:", error);
     }
