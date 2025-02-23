@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Input } from "antd";
-
+ const Navigate = useNavigate()
 import "@ant-design/v5-patch-for-react-19";
 import { GoogleSpreadsheet }  from 'google-spreadsheet';
 
@@ -45,7 +45,7 @@ const Admin = () => {
       });
 
       setEstate(""); // Clear input field
-      window.location.reload();
+      
     } catch (error) {
       console.error("Error:", error.response ? error.response.data : error);
     }
@@ -115,7 +115,7 @@ const Admin = () => {
       setProperty("");
       setSelectedState("");
 
-      window.location.reload(); // Refresh page
+      Navigate('/landlist')// Refresh page
     } catch (error) {
       console.error("Error creating property:", error);
     }
