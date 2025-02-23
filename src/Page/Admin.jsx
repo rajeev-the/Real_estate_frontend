@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Button, Input } from "antd";
- const Navigate = useNavigate()
+ import { useNavigate } from 'react-router-dom'
 import "@ant-design/v5-patch-for-react-19";
 import { GoogleSpreadsheet }  from 'google-spreadsheet';
 
@@ -15,7 +15,7 @@ const Admin = () => {
   const [Image, setImage] = useState("");
   const [Road, setRoad] = useState("");
   const [property, setProperty] = useState("");
-
+const Navigate = useNavigate()
  
 
   useEffect(() => {
